@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://cdn.glitch.com/c62efef6-1e75-45cf-b248-afeccdda9477%2Fillustration.svg?v=1618196069568" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <title>WebRTC Demo</title>
+  </head>
+  <body>
+    <h2>1. Start your Webcam</h2>
+    <div class="videos">
+      <span>
+        <h3>Local Stream</h3>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
+      <span>
+        <h3>Remote Stream</h3>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </span>
+
+
+    </div>
+
+    <button id="webcamButton">Start webcam</button>
+    <button id="toggleVideo" disabled>Toggle Video</button>
+    <button id="toggleAudio" disabled>Toggle Audio</button>
+    <button id="toggleCamera" disabled>Switch Camera</button>
+    <h2>2. Allow to Receive Calls</h2>    
+    <input style="display:none;" id="callInput" />
+    <button id="answerButton" disabled>Allow Calls</button>
+    
+    <p>Answer the call from a different browser window or device</p>
+    <h2>3. Create a Call</h2>
+    <button id="callButton" disabled>Create Call (offer)</button>
+
+    
+
+    <h2>4. Hangup</h2>
+
+    <button id="hangupButton" onclick="window.location.reload();" >Hangup</button>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
